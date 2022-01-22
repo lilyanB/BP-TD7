@@ -6,10 +6,10 @@ var ERC20Mintable = artifacts.require("ERC20Mintable.sol");
 
 module.exports = (deployer, network, accounts) => {
     deployer.then(async () => {
-        //await deployTDToken(deployer, network, accounts); 
-        //await deployEvaluator(deployer, network, accounts); 
-        //await setPermissionsAndRandomValues(deployer, network, accounts); 
-		await rinkebyToken(deployer, network, accounts);
+        await deployTDToken(deployer, network, accounts); 
+        await deployEvaluator(deployer, network, accounts); 
+        await setPermissionsAndRandomValues(deployer, network, accounts); 
+		//await rinkebyToken(deployer, network, accounts);
         await deployRecap(deployer, network, accounts); 
 		await claimToken(deployer, network, accounts); 
     });
@@ -35,9 +35,9 @@ async function deployRecap(deployer, network, accounts) {
 }
 
 async function rinkebyToken(deployer, network, accounts) {
-	TDToken = await TDErc20.at("0xccCf36429190773Fd604a808Cb03f682136B007e")
-	Evaluator = await evaluator.at("0x1987D516D14eBf3025069504b1aD2257516C426a")
-    ClaimableToken = await ERC20Claimable.at("0x754a4F8D05f9A4157C355d42E8334999Ea5d66c9")
+	TDToken = await TDErc20.at("0x77dAe18835b08A75490619DF90a3Fa5f4120bB2E")
+	Evaluator = await evaluator.at("0x384C00Ff43Ed5376F2d7ee814677a15f3e330705")
+    ClaimableToken = await ERC20Claimable.at("0xb5d82FEE98d62cb7Bc76eabAd5879fa4b29fFE94")
 }
 
 async function claimToken(deployer, network, accounts) {
@@ -95,12 +95,12 @@ async function claimToken(deployer, network, accounts) {
 	//ex8
 	await Evaluator.ex8_depositAndMint({from: accounts[1]});
 	getBalance = await TDToken.balanceOf(accounts[1]);
-	console.log("Ex7 balance : " + getBalance.toString());
+	console.log("Ex8 balance : " + getBalance.toString());
 
 	//ex9
 	await Evaluator.ex9_withdrawAndBurn({from: accounts[1]});
 	getBalance = await TDToken.balanceOf(accounts[1]);
-	console.log("Ex7 balance : " + getBalance.toString());
+	console.log("Ex9 balance : " + getBalance.toString());
 
 	
 
