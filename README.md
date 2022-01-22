@@ -72,3 +72,15 @@ Extra points if you find bugs / corrections this TD can benefit from, and submit
 - TDToken `0xccCf36429190773Fd604a808Cb03f682136B007e`
 - ClaimableToken `0x754a4F8D05f9A4157C355d42E8334999Ea5d66c9`
 - Evaluator `0x1987D516D14eBf3025069504b1aD2257516C426a`
+
+
+## Installing
+
+mnémonic:
+
+
+Api infura:
+c40e33dbb5734e61bdf6ad5e2aa16a9b
+
+notre adresse:
+https://rinkeby.etherscan.io/address/0x607ec1a7f093801b40dae21131ddadb8ce991106
